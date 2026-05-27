@@ -20,8 +20,5 @@
 .square {
     border: 1px dashed white;
     background-color: gray;
-}
-
-.square-hovered {
-    background-color: black;
+    filter: brightness(1);
 }

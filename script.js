@@ -19,7 +19,11 @@ function createGrid(gridDimension = 16) {
 
 squareContainer.addEventListener("mouseover", e => {
     if (e.target.matches(".square")) {
-        e.target.classList.add("square-hovered");
+        // You can also use the dataset property or hsl
+        const brightness = getComputedStyle(e.target).getPropertyValue("filter");
+        const regex = /\(([^)]+)\)/;
+        const brightnessVal = brightness.match(regex);
+        e.target.style.filter = `brightness(${brightnessVal[1] - 0.1})`;
     }
 });
 
